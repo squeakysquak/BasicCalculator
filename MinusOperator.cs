@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace BasicCalculator
 {
-    internal class PlusOperator : Operator
+    internal class MinusOperator : Operator
     {
         public override int DoOperation(int firstOperand, int secondOperand)
         {
-            return firstOperand + secondOperand;
+            return firstOperand - secondOperand;
         }
-
         public override string ToString()
         {
-            return "+";
+            return "-";
         }
     }
 }

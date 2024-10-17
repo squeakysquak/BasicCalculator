@@ -13,6 +13,18 @@ namespace BasicCalculator
             if (input == "+")
             {
                 return new PlusOperator();
+            } 
+            else if (input == "-")
+            {
+                return new MinusOperator();
+            }
+            else if (input == "/")
+            {
+                return new DivideOperator();
+            }
+            else if (input == "*")
+            {
+                return new MultiplyOperator();
             }
             else
             {
