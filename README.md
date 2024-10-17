@@ -1,6 +1,6 @@
 # Basic Calculator
 ## Summary
-This is a basic .NET calculator application written in C# for Windows. It is capable of performing simple operations (addition, subtraction, division, multiplication, exponentiation and square root) on up to 2 operators.
+This is a basic .NET calculator application written in C# for Windows. It is capable of performing simple operations (addition, subtraction, division, multiplication, exponentiation and square root) on up to 2 operands.
 
 ## Pre-Requisites:
 [.NET SDK 6.0.100](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or a later version.
