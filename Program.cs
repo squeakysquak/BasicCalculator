@@ -30,7 +30,7 @@ internal class Program
         double firstOperand = double.Parse(firstOperandString);
         Console.WriteLine("First Operand: " + firstOperand);
 
-        Console.WriteLine("Enter an operator (+, -, / or *)");
+        Console.WriteLine("Enter an operator (+, -, /, *, ^ or sqrt)");
 
         bool operatorCheck = false;
         string? operatorString = "";
@@ -49,7 +49,27 @@ internal class Program
             }
             catch
             {
-                Console.WriteLine("Error: Please enter a valid operator (+, -, / or *)");
+                Console.WriteLine("Error: Please enter a valid operator (+, -, /, *, ^ or sqrt)");
+            }
+        }
+        if (op == null)
+        {
+            Console.WriteLine("Error: Operator was not properly saved");
+            return;
+        }
+
+        if (op.m_SingleOperand)
+        {
+            try
+            {
+                double result = op.DoOperation(firstOperand, 0);
+                Console.WriteLine(op.ToString() + " " + firstOperand + " = " + result);
+                return;
+            }
+            catch (System.Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                return;
             }
         }
 
@@ -76,18 +96,16 @@ internal class Program
         double secondOperand = double.Parse(secondOperandString);
         Console.WriteLine("Second Operand: " + secondOperand);
 
-        if (op != null)
+        try
         {
-            try
-            {
-                double result = op.DoOperation(firstOperand, secondOperand);
-                Console.WriteLine(firstOperand + " " + op.ToString() + " " + secondOperand + " = " + result);
-            }
-            catch (System.Exception e)
-            {
-                Console.WriteLine("Error: " + e);
-            }
-            
+            double result = op.DoOperation(firstOperand, secondOperand);
+            Console.WriteLine(firstOperand + " " + op.ToString() + " " + secondOperand + " = " + result);
+            return;
+        }
+        catch (System.Exception e)
+        {
+            Console.WriteLine("Error: " + e);
+            return;
         }
     }
 

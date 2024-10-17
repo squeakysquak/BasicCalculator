@@ -8,6 +8,7 @@ namespace BasicCalculator
 {
     internal abstract class Operator
     {
+        public bool m_SingleOperand = false;
         public static Operator CreateOperatorFromString(string input)
         {
             if (input == "+")
@@ -25,6 +26,14 @@ namespace BasicCalculator
             else if (input == "*")
             {
                 return new MultiplyOperator();
+            }
+            else if (input == "^")
+            {
+                return new ExponentOperator();
+            }
+            else if (input == "sqrt")
+            {
+                return new SqrtOperator();
             }
             else
             {
