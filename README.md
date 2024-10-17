@@ -10,3 +10,4 @@ This is a basic .NET calculator application written in C# for Windows. It is cap
 2. Run the program using `dotnet run`.
 3. Follow the instructions printed to the console and enter a number, followed by an operator, followed by another number.
 4. Upon successful calculation, the result of the calculation will be printed to the console.
+![Capture](https://github.com/user-attachments/assets/e2fe0028-da15-45ff-9067-51d6c1694b13)
