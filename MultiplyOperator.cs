@@ -8,7 +8,7 @@ namespace BasicCalculator
 {
     internal class MultiplyOperator : Operator
     {
-        public override int DoOperation(int firstOperand, int secondOperand)
+        public override double DoOperation(double firstOperand, double secondOperand)
         {
             return firstOperand * secondOperand;
         }

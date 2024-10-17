@@ -32,6 +32,6 @@ namespace BasicCalculator
             }
         }
 
-        public abstract int DoOperation(int firstOperand, int secondOperand);
+        public abstract double DoOperation(double firstOperand, double secondOperand);
     }
 }

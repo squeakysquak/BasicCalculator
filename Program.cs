@@ -7,7 +7,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter an integer (first operand)");
+        Console.WriteLine("Enter a number (first operand)");
 
         bool firstOperandCheck = false;
         string? firstOperandString = "";
@@ -16,18 +16,18 @@ internal class Program
         {
             firstOperandString = Console.ReadLine();
 #pragma warning disable CS8604 // Possible null reference argument.
-            if (IsInteger(firstOperandString))
+            if (IsDouble(firstOperandString))
             {
                 firstOperandCheck = true;
             }
             else
             {
-                Console.WriteLine("Error: Please enter an integer (first operand)");
+                Console.WriteLine("Error: Please enter a valid number (first operand)");
             }
 #pragma warning restore CS8604 // Possible null reference argument.
         }
 
-        int firstOperand = int.Parse(firstOperandString);
+        double firstOperand = double.Parse(firstOperandString);
         Console.WriteLine("First Operand: " + firstOperand);
 
         Console.WriteLine("Enter an operator (+, -, / or *)");
@@ -53,7 +53,7 @@ internal class Program
             }
         }
 
-        Console.WriteLine("Enter an integer (second operand)");
+        Console.WriteLine("Enter a number (second operand)");
 
         bool secondOperandCheck = false;
         string? secondOperandString = "";
@@ -62,26 +62,26 @@ internal class Program
         {
             secondOperandString = Console.ReadLine();
 #pragma warning disable CS8604 // Possible null reference argument.
-            if (IsInteger(secondOperandString))
+            if (IsDouble(secondOperandString))
             {
                 secondOperandCheck = true;
             }
             else
             {
-                Console.WriteLine("Error: Please enter an integer (second operand)");
+                Console.WriteLine("Error: Please enter a valid number (second operand)");
             }
 #pragma warning restore CS8604 // Possible null reference argument.
         }
 
-        int secondOperand = int.Parse(secondOperandString);
+        double secondOperand = double.Parse(secondOperandString);
         Console.WriteLine("Second Operand: " + secondOperand);
 
         if (op != null)
         {
             try
             {
-                int result = op.DoOperation(firstOperand, secondOperand);
-                Console.WriteLine("Result = " + result);
+                double result = op.DoOperation(firstOperand, secondOperand);
+                Console.WriteLine(firstOperand + " " + op.ToString() + " " + secondOperand + " = " + result);
             }
             catch (System.Exception e)
             {
@@ -91,8 +91,8 @@ internal class Program
         }
     }
 
-    private static bool IsInteger(string input)
+    private static bool IsDouble(string input)
     {
-        return int.TryParse(input, out int n);
+        return double.TryParse(input, out double n);
     }
 }
